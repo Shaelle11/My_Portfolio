@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@600;800&family=Heebo:wght@400;500&family=Kalam&family=Outfit:wght@400;700&family=Poppins:wght@400;500;600&family=Volkhov:wght@400;700&family=Work+Sans&display=swap');
+
+:root{
+    --primary-color-500:#8A42DB;
+    --primary-color-400:#9955E8;
+    --secondary-color:#7DFFAF;
+    --ssecondary-color: #A5C4D4;
+    --surface-background: #171023;
+    --surface-primary: #2C243B;
+    --surface-secondary: #413A4F;
+    --surface-tertiary: #4E4563;
+    --text-primary:#F5F6F6;
+    --text-secondary: #CDD0D4;
+    --max-width: 1440px;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Contact{
+   padding: 40px;
+display: flex;
+justify-content: center;
+}
+
+.Contact__Section{
+    display: flex;
+    padding: 55px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-radius: 16px;
+    background: var(--surface-primary);
+    width: 100%;
+    gap: 2rem;
+    justify-content: space-between;
+}
+.Contact_Text{
+    display: grid;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.Contact_Text h1{
+    color: var(--Color-Stroke-stroke-highlight, #7DFFAF);
+font-family: Kalam;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; 
+}
+.Contact_Text h2{
+    color: var(--Color-Text-text-primary, #F5F6F6);
+font-family: Heebo;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 32px;
+}
+.Contact_Text P{
+    max-width: 592px;
+color: var(--Color-Text-text-secondary, #CDD0D4);
+font-family: Heebo;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
+.Contact_Text a{
+    color: var(--Color-Stroke-stroke-highlight, #7DFFAF);
+font-family: Heebo;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+text-decoration-line: underline;
+}
+.Socials{
+    display: flex;
+    gap: 16px;
+}
+a{
+    cursor: none;
+}
+.Avatar{
+    display: flex;
+width: 160px;
+height: 160px;
+padding: 0.005px 0.153px 0.092px 0.043px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+}
+form{
+    display: grid;
+    gap: 8px;
+}
+form input{
+    display: flex;
+max-width: 488px;
+padding: 12px var(--Border-radius-border-radius-lg, 16px);
+align-items: center;
+border: none;
+border-radius: var(--Border-radius-border-radius-md, 8px);
+
+background: var(--surface-background);
+}
+form input:focus-within{
+    outline: 1.5px solid var(--secondary-color);
+    cursor: none;
+}
+form input:hover{
+    outline: 1.5px solid var(--secondary-color);
+    cursor: none;
+}
+input::placeholder{
+    color: var(--text-secondary);
+    font-family: Heebo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
+}
+
+form textarea{
+    display: flex;
+    max-width: 488px;
+    height: 160px;
+    padding: 16px;
+align-items: flex-start;
+gap: var(--Border-radius-border-radius-md, 8px);
+border-radius: var(--Border-radius-border-radius-md, 8px);
+background: var(--Color-Surface-surface-background, #171023);
+    flex: 1 0 0;
+align-self: stretch;
+color: var(--Color-Text-text-secondary, #CDD0D4);
+font-family: Heebo;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+border: none;
+}
+form textarea:focus-within{
+    outline: 1.5px solid var(--secondary-color);
+    cursor: none;
+}
+
+form textarea:hover{
+    outline: 1.5px solid var(--secondary-color);
+    cursor: none;
+}
+textarea::placeholder{
+    color: var(--text-secondary);
+font-family: Heebo;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+.message{
+    justify-self: flex-start;
+}

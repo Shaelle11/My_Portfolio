@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@600;800&family=Heebo:wght@400;500&family=Kalam&family=Outfit:wght@400;700&family=Poppins:wght@400;500;600&family=Volkhov:wght@400;700&family=Work+Sans&display=swap');
+
+:root{
+    --primary-color-500:#8A42DB;
+    --primary-color-400:#9955E8;
+    --secondary-color:#7DFFAF;
+    --ssecondary-color: #A5C4D4;
+    --surface-background: #171023;
+    --surface-primary: #2C243B;
+    --surface-secondary: #413A4F;
+    --surface-tertiary: #4E4563;
+    --text-primary:#F5F6F6;
+    --text-secondary: #CDD0D4;
+    --max-width: 1440px;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero__section{
+    position: relative;
+}
+.hero{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin-top: 70px;
+padding: 0px 70px;
+align-items: center;
+justify-content: space-between;
+background-color: var(--surface-background);
+}
+.hero_text{
+    flex: 2;
+    display: flex;
+max-width: 592px;
+flex-direction: column;
+align-items: flex-start;
+gap: 32px;
+}
+    .headtext{
+        display: flex;
+        position: relative;
+        height: 60px;
+       overflow: hidden;
+        top: 0;
+        padding: 4px;
+    }
+    .headtext .small{
+        width: 120px;
+        font-family: Kalam;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 56px; 
+    background: var(--brand-gradient-horizontal, linear-gradient(90deg, #9955E8 0%, #7BFFAF 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    }
+    .parent{
+        display: grid;
+        position: relative;
+        top: 0;
+        height: 100%;
+        animation: slide 8s steps(2) infinite;
+    }
+
+@keyframes slide{
+    100%{
+        top: -115px;
+    }
+}
+.kid::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width:100%;
+  border-left: 2px solid var(--ssecondary-color);
+animation: typing 4s steps(10) infinite;
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+.kid{
+    width: 100%;
+}
+
+.hero_text span{
+    font-family: Kalam;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 56px; 
+    background: var(--brand-gradient-horizontal, linear-gradient(90deg, #9955E8 0%, #7BFFAF 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.hero_text h1{
+    color: var(--text-primary);
+font-family: Heebo;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 32px;
+align-self: stretch;
+}
+.hero_text p{
+align-self: stretch;
+color: var(--ssecondary-color);
+font-family: Heebo;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
+.Hero_img{
+    align-items: center;
+    width: 488px;
+    height: 417px;
+    display: flex;
+    justify-content: center;
+}
+
+.heroimg{
+    align-items: center;
+}
+.heroimg:hover{
+    transform: scale(1.2);
+    transition: all ease-in-out 0.5s;
+}
+.btn_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 358px;
+    height: 24px;
+    margin-bottom: 48px;
+}
+.btn_container div{
+    width: 167px;
+    height: auto;
+    display: flex;
+}
+.resume{
+display: flex;
+min-width: 112px;
+padding: 16px 24px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+overflow: hidden;
+position: relative;
+border-radius: 8px;
+background: var(--surface-secondary);
+color: var(--text-primary);
+text-align: center;
+font-family: Heebo;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px;
+}
+.resume p{
+    color: var(--text-primary);
+    text-align: center;
+    font-family: Heebo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; 
+}
+.resume:before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--ssecondary-color);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5s;
+    filter: blur(30px);
+    transform: translateX(-130px ) skewX(-15deg);
+}
+.resume:after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #7DFFAF;
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(30px);
+    transform: translateX(-100px ) skewX(-15deg);
+}
+.resume:hover:before{
+   opacity: .6;
+   transition: 2s;
+   transform: translateX(300px) skewX(-15deg);
+}
+.resume::focused-within{
+    transform: scale(0.9);
+}
+
+.touch{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+min-width: 112px;
+padding: 16px 24px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border-radius: 8px;
+background: var(--Color-Surface-button-primary-default, #8A42DB);
+}
+
+.touch:before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #7DFFAF;
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5s;
+    filter: blur(30px);
+    transform: translateX(-130px ) skewX(-15deg);
+}
+.touch:after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #7DFFAF;
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(30px);
+    transform: translateX(-100px ) skewX(-15deg);
+}
+.touch:hover:before{
+   opacity: .6;
+   transition: 2s;
+   transform: translateX(300px) skewX(-15deg);
+}
+.touch:focused-within{
+    transform: scale(0.9);
+}
+
+.touch p{
+    color: var(--Color-Text-primary-button-label, #F5F6F6);
+text-align: center;
+font-family: Heebo;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px;
+}
+.next{
+width: 121.069px;
+height: 33.707px;
+position: absolute;
+top: 80%;
+right: 30%;
+
+}
+.next:hover{
+   transform: scale(1.2);
+   transition: all ease-in-out 0.5s;
+}
+.btn_container{
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 900px){
+    .hero{
+       justify-content: center;
+       width: 100%;
+    }
+.next{
+    width: 121.069px;
+    height: 33.707px;
+  top: 95%;
+  right: 30%;
+}
+
+}
