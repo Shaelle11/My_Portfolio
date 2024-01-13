@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.be27be95.css",
+    "main.js": "/static/js/main.bb6d7f2c.js",
+    "static/js/787.2dcca737.chunk.js": "/static/js/787.2dcca737.chunk.js",
+    "static/media/system.svg": "/static/media/system.7e79c5a5a825a434d62653510eb1fa24.svg",
+    "static/media/techgirl.svg": "/static/media/techgirl.bf9acf664439ba97abec286789787c05.svg",
+    "static/media/Cute Avatar.svg": "/static/media/Cute Avatar.7ea031c0cbbaad328326ca2a0961f30e.svg",
+    "static/media/SunDim.svg": "/static/media/SunDim.727f2747b6f46f26efc8e45b910364d7.svg",
+    "static/media/ReadCvLogo.svg": "/static/media/ReadCvLogo.4489dcdc99ff870011d50957eb7d1c62.svg",
+    "static/media/mylogo.svg": "/static/media/mylogo.dc324beefb719438298572fc047913d8.svg",
+    "static/media/ArrowUp.svg": "/static/media/ArrowUp.f9314e9dda0dcdc5786b4488970e44d3.svg",
+    "static/media/ArrowRight.svg": "/static/media/ArrowRight.eca6ac184f6e323526a777b0a3b85e80.svg",
+    "index.html": "/index.html",
+    "main.be27be95.css.map": "/static/css/main.be27be95.css.map",
+    "main.bb6d7f2c.js.map": "/static/js/main.bb6d7f2c.js.map",
+    "787.2dcca737.chunk.js.map": "/static/js/787.2dcca737.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be27be95.css",
+    "static/js/main.bb6d7f2c.js"
+  ]
+}
