@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@600;800&family=Heebo:wght@400;500&family=Kalam&family=Outfit:wght@400;700&family=Poppins:wght@400;500;600&family=Volkhov:wght@400;700&family=Work+Sans&display=swap');
+
+:root{
+    --primary-color-500:#8A42DB;
+    --primary-color-400:#9955E8;
+    --secondary-color:#7DFFAF;
+    --ssecondary-color: #A5C4D4;
+    --surface-background: #171023;
+    --surface-primary: #2C243B;
+    --surface-secondary: #413A4F;
+    --surface-tertiary: #4E4563;
+    --text-primary:#F5F6F6;
+    --text-secondary: #CDD0D4;
+    --max-width: 1440px;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Sidebar{
+    width: 280px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1;
+    flex-direction: column;
+    padding: 24px;
+    align-items: flex-end;
+    height: 86vh;
+    background-color:var(--surface-primary);
+    display: flex;
+    animation: 2s slide-left;
+}
+      @keyframes slide-left {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0%);
+        }
+      }
+
+
+
+.Sidebar .List{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+   gap: 16px;
+   align-items: flex-end;
+   text-align: end;
+
+}
+.List li{
+    color: var(--Color-Text-text-secondary, #CDD0D4);
+    font-family: Heebo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+
+}
+.List .line{
+   margin: 24px 0px 24px 0px;
+    width: 220px;
+    background-color: var(--text-secondary);
+    border: 1px solid;
+    opacity: 0.3;
+}
+
+ .side{
+    padding: 12px;
+    background-color: var(--surface-secondary);
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+}

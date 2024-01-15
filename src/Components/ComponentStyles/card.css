@@ -59,7 +59,7 @@ position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 336px;
+    width:100%;
 }
 .date_time h1{
     color: var(--Color-Text-text-secondary, #CDD0D4);
@@ -242,4 +242,13 @@ animation: move 2s ease;
     }
     .Visit .site::focused-within{
         transform: scale(0.9);
+    }
+
+    @media screen and (max-width:900px) {
+        .card{
+            max-width: 312px; 
+        }
+        .image_background{
+            max-width: 264px;
+        }
     }

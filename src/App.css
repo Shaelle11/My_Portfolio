@@ -48,4 +48,8 @@ overflow: scroll;
   z-index: 9999;
 }
 
-
+@media screen and (max-width: 375px) {
+  .default{
+    display: none;
+  }
+}

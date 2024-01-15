@@ -19,7 +19,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.Contact{
+.Contacts{
    padding: 40px;
 display: flex;
 justify-content: center;
@@ -27,7 +27,7 @@ justify-content: center;
 
 .Contact__Section{
     display: flex;
-    padding: 55px;
+    padding: 48px;
     align-items: flex-start;
     flex-wrap: wrap;
     border-radius: 16px;
@@ -57,7 +57,7 @@ font-style: normal;
 font-weight: 500;
 line-height: 32px;
 }
-.Contact_Text P{
+.Contact_Text p{
     max-width: 592px;
 color: var(--Color-Text-text-secondary, #CDD0D4);
 font-family: Heebo;
@@ -92,12 +92,14 @@ align-items: center;
 flex-shrink: 0;
 }
 form{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
+justify-content: center;
+max-width: 100%;
 }
 form input{
     display: flex;
-max-width: 488px;
 padding: 12px var(--Border-radius-border-radius-lg, 16px);
 align-items: center;
 border: none;
@@ -124,7 +126,6 @@ input::placeholder{
 
 form textarea{
     display: flex;
-    max-width: 488px;
     height: 160px;
     padding: 16px;
 align-items: flex-start;
@@ -160,4 +161,6 @@ line-height: 24px; /* 150% */
 }
 .message{
     justify-self: flex-start;
+    padding: 16px;
+    font-size: 16px;
 }

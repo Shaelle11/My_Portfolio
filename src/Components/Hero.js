@@ -10,8 +10,10 @@ export default function Hero(){
      <section className="hero">
         <div className="hero_text">
 <div>
-<span className="headtext"><p className="small">Hi I'm</p><span className="parent"> <span className="kid">"The Shaelle"</span>
-<span className="kid long">"Nanji Lakan"</span></span>
+<span className="headtext"><p className="small">Hi I'm </p> <span className="containerparent">
+<span className="parent"> <span className="kid"> "The Shaelle" </span>
+<span className="kid long"> "Nanji Lakan"</span></span>
+</span>
 </span>
 
 </div>
@@ -43,7 +45,7 @@ export default function Hero(){
 </clipPath>
 </defs>
 </svg></a>
-        </div>
+        </div> 
    </div>
  )
 }

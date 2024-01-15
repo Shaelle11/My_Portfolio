@@ -42,10 +42,7 @@ gap: 32px;
 }
     .headtext{
         display: flex;
-        position: relative;
-        height: 60px;
-       overflow: hidden;
-        top: 0;
+       flex-wrap: wrap;
         padding: 4px;
     }
     .headtext .small{
@@ -61,11 +58,17 @@ gap: 32px;
     -webkit-text-fill-color: transparent;
 
     }
+    .containerparent{
+        position: relative; 
+        overflow: hidden;
+    width: 250px;
+         top: 0;
+    }
     .parent{
         display: grid;
-        position: relative;
-        top: 0;
-        height: 100%;
+        position: relative; 
+         top: 0;
+        height: 60px;
         animation: slide 8s steps(2) infinite;
     }
 
@@ -143,7 +146,8 @@ line-height: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 358px;
+    max-width: 358px;
+    gap: 24px;
     height: 24px;
     margin-bottom: 48px;
 }
@@ -296,8 +300,8 @@ right: 30%;
 .next{
     width: 121.069px;
     height: 33.707px;
-  top: 95%;
-  right: 30%;
+  top: 105%;
+  right: 50%;
 }
 
 }

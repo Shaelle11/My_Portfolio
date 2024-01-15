@@ -1,4 +1,4 @@
-import { findAllByAltText } from "@testing-library/react";
+
 
 export default [
     {
@@ -13,6 +13,8 @@ export default [
         },
         name: "Responsive Travel Agency Landing Page",
 Description: "Fully responsive Travel Agency Landing Page",
+SourceCode: "https://github.com/Shaelle11/Travel_LandingPage",
+Site:"https://shaelle11.github.io/Travel_LandingPage/",
     },
     {
         id: 2,
@@ -26,6 +28,8 @@ Description: "Fully responsive Travel Agency Landing Page",
          },
          name: "Dark/Light mode Calculator",
  Description: "A Fully responsive Calculator with a dark mode and light mode",
+SourceCode:"https://github.com/Shaelle11/My_Calculator/",
+ Site:"https://shaelle11.github.io/My_Calculator/"
      },
      {
         id: 3,

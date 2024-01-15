@@ -5,9 +5,9 @@ import "../Components/ComponentStyles/Contact.css"
 
 export default function Contact(){
     return(
-        <div className="Contact">
+        <div className="Contacts">
             <div className="Contact__Section">
-<div className="Contacts">
+<div className="Contact_section">
 <div>
 <img className="Avatar" src={Avatar}/>
 </div>
