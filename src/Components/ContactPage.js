@@ -3,7 +3,7 @@ import Avatar from "../images/Cute Avatar.svg"
 import ArrrowRight from "../images/ArrowRight.svg"
 import "../Components/ComponentStyles/Contact.css"
 
-export default function Contact(){
+export default function ContactPage(){
     return(
         <div className="Contacts">
             <div className="Contact__Section">

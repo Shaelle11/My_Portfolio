@@ -17,10 +17,10 @@ export default function Card(props) {
       <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} className="image_background">
         <img src={props.img} />
         <div className={`Visit ${isHovered ? 'Show' : ''}`}>
-          <a className="source" href={props.SourceCode}>
+          <a className="source" target="blank" rel="noopener noreferrer"  href={props.SourceCode}>
             See SourceCode
           </a>
-          <a className="site" href={props.Site}>
+          <a className="site" target="blank" rel="noopener noreferrer" href={props.Site}>
             Visit Site
           </a>
         </div>

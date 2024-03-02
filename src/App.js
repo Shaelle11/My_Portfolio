@@ -1,7 +1,11 @@
 // App.js
 import './App.css';
 import { useRef, useState } from 'react';
-import Home from "./Pages/Home/Home";
+import Root from './Root';
+import Burger from "./images/List.svg"
+import BurgerClose from './images/X.svg'
+import Footer from "./Components/Footer";
+import Nav from './Components/Nav';
 
 function App() {
   const defaultCursor = useRef(null);
@@ -15,6 +19,14 @@ function App() {
 
   return (
     <div onMouseMove={changePosition} className="App">
+     
+      <Nav tabindex="0" aria-label="Navbar" aria-labelledby="home" aria-controls="nav"
+        Burger = {Burger}
+        BurgerClose = {BurgerClose} 
+        />
+         <Root/>
+        <Footer/>
+       
       <div
         ref={defaultCursor}
         className='default'
@@ -34,8 +46,6 @@ function App() {
          <path d="M22 12l-20 12-1-24z" />
        </svg>
       </div>
-     
-      <Home />
     </div>
   );
 }

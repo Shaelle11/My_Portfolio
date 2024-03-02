@@ -2,7 +2,8 @@ import React from "react";
 import "./ComponentStyles/Hero.css";
 import keyboard from "../images/system.svg";
 import CVlogo from "../images/ReadCvLogo.svg"
-import arrowRight from "../images/ArrowRight.svg"
+import arrowRight from "../images/ArrowRight.svg";
+import { Link } from "react-router-dom"; 
 
 export default function Hero(){
  return(
@@ -20,10 +21,11 @@ export default function Hero(){
 <h1 >Computer Science Undergraduate and Frontend Engineer</h1>
 <p>I specialize in building innovative web applications using technologies such as HTML, CSS, JS, React, Vue and Node.js.</p>
 <div className="btn_container">
-    <div className="resume" role="button">
-        <img src={CVlogo} alt="resume icon"/>
-        <p>My resume</p>
-    </div>
+<a href="/pdfview">  <div className="resume" role="button">
+   
+        <img src={CVlogo} alt="resume icon"/><p>My resume</p>
+       
+         </div> </a>
     <div className="touch" role="button"><p>Get in touch</p>
     <img className="arrowRight" src={arrowRight} alt="right arrow"/></div>
     

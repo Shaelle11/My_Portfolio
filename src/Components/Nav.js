@@ -4,6 +4,7 @@ import Sidebar from '../Components/Sidebar'
 import MyLogo from '../images/mylogo.svg';
 import Lightmode from '../images/SunDim.svg';
 import Darkmode from '../images/darkmode.svg';
+import { Link } from "react-router-dom";
 
 
 
@@ -26,11 +27,11 @@ setIsComponentVisible((isVisible) => !isVisible)
         <nav id="nav">
             <div className="logo_container"><img className="logo" src={MyLogo} alt="my logo"/></div>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Project</li>
-                <li>Blog</li>
-                <li>Contacts</li>
+                <li><ActiveLink className='link' to="/" > Home</ActiveLink></li>
+                <li><ActiveLink className='link' to="/projects"> Project</ActiveLink></li>
+                <li><ActiveLink className='link' to="/blog"> Blog</ActiveLink></li>
+                <li><ActiveLink className='link' to="/about" > About</ActiveLink></li>
+                <li><ActiveLink className='link' to='/contact' > Contact</ActiveLink></li>
 
               <div>
 <div className="mode">
@@ -48,6 +49,14 @@ setIsComponentVisible((isVisible) => !isVisible)
         </nav>
         
     )
+}
+function ActiveLink({to, children, ...props}){
+const path = window.location.pathname
+
+return(
+    <li className={path === to ? "active" : ""}>
+         <Link to={to} {...props}>{children}</Link></li>
+)
 }
 
 export default Nav;

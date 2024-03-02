@@ -54,16 +54,24 @@ nav li{
     width: 55px;
 height: 20px;
 text-align: center;
+text-decoration: none;
 }
 
 nav li:hover{
     border-bottom: solid 2px var(--secondary-color);
   transition: 0.3s;
-
-
 }
+
+.active{  
+    border-bottom: solid 2px var(--secondary-color);
+}
+nav li
 .mode{
     width: 55px;
+}
+nav .link{
+    text-decoration: none;
+    color: var(--ssecondary-color);
 }
 .mode:hover{
     transition: 1s;

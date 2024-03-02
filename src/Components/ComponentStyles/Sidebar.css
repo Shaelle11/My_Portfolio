@@ -69,7 +69,10 @@
     border: 1px solid;
     opacity: 0.3;
 }
-
+.List .link{
+  text-decoration: none;
+  color: var(--ssecondary-color);
+}
  .side{
     padding: 12px;
     background-color: var(--surface-secondary);

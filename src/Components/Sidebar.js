@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "../Components/ComponentStyles/Sidebar.css"
 import Lightmode from '../images/SunDim.svg';
 import Darkmode from '../images/darkmode.svg';
+import { Link } from "react-router-dom";
 
 export default function Sidebar(){
     const [isMode, setIsMode] = useState(`${Lightmode}`)
@@ -12,11 +13,11 @@ export default function Sidebar(){
     return(
         <div className="Sidebar">
  <ul className="List">
-                <li>Home</li>
-                <li>About</li>
-                <li>Project</li>
-                <li>Blog</li>
-                <li>Contacts</li>
+ <li><ActiveLink className='link' to="/" > Home</ActiveLink></li>
+                <li><ActiveLink className='link'  to="/projects"> Project</ActiveLink></li>
+                <li><ActiveLink className='link' to="/blog"> Blog</ActiveLink></li>
+                <li><ActiveLink className='link' to="/about" > About</ActiveLink></li>
+                <li><ActiveLink className='link' to='/contact' > Contact</ActiveLink></li>
 <div className="line"></div>
              
              <div className=" mode side">
@@ -27,3 +28,11 @@ export default function Sidebar(){
         </div>
     )
 }
+function ActiveLink({to, children, ...props}){
+    const path = window.location.pathname
+    
+    return(
+        <li className={path === to ? "active" : ""}>
+             <Link to={to} {...props}>{children}</Link></li>
+    )
+    }
