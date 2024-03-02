@@ -27,11 +27,11 @@ setIsComponentVisible((isVisible) => !isVisible)
         <nav id="nav">
             <div className="logo_container"><img className="logo" src={MyLogo} alt="my logo"/></div>
             <ul>
-                <li><ActiveLink className='link' to="/" > Home</ActiveLink></li>
-                <li><ActiveLink className='link' to="/projects"> Project</ActiveLink></li>
-                <li><ActiveLink className='link' to="/blog"> Blog</ActiveLink></li>
-                <li><ActiveLink className='link' to="/about" > About</ActiveLink></li>
-                <li><ActiveLink className='link' to='/contact' > Contact</ActiveLink></li>
+                <li><ActiveLink className='link' to="My_Portfolio/" > Home</ActiveLink></li>
+                <li><ActiveLink className='link' to="My_Portfolio/projects"> Project</ActiveLink></li>
+                <li><ActiveLink className='link' to="My_Portfolio/blog"> Blog</ActiveLink></li>
+                <li><ActiveLink className='link' to="My_Portfolio/about" > About</ActiveLink></li>
+                <li><ActiveLink className='link' to='My_Portfolio/contact' > Contact</ActiveLink></li>
 
               <div>
 <div className="mode">
