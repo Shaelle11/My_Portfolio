@@ -13,7 +13,7 @@ export default function Root(){
     <main>
         <Routes>
    
-      <Route path='/' element={<Home />}/>
+      <Route path='My_Portfolio/' element={<Home />}/>
      <Route path="/about" element={<About />}/>
      <Route path="/projects" element={<Projects/>}/>
      <Route path="/blog" element={<Blog/>}/>
