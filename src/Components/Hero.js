@@ -21,7 +21,7 @@ export default function Hero(){
 <h1 >Computer Science Undergraduate and Frontend Engineer</h1>
 <p>I specialize in building innovative web applications using technologies such as HTML, CSS, JS, React, Vue and Node.js.</p>
 <div className="btn_container">
-<Link to="My_Portfolio/pdfview">  <div className="resume" role="button">
+<Link to="/pdfview">  <div className="resume" role="button">
    
         <img src={CVlogo} alt="resume icon"/><p>My resume</p>
        

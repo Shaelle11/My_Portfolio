@@ -18,7 +18,7 @@ export default function Root(){
      <Route path="My_Portfolio/projects" element={<Projects/>}/>
      <Route path="My_Portfolio/blog" element={<Blog/>}/>
      <Route path="My_Portfolio/contact" element={<Contacts/>}/>
-     <Route path="My_Portfolio/pdfview" element={<PdfView/>}/>
+     <Route path="/pdfview" element={<PdfView/>}/>
      </Routes>
     </main>
  )
