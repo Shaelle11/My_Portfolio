@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/My_Portfolio/static/css/main.5ca47a1b.css",
-    "main.js": "/My_Portfolio/static/js/main.dfd4761a.js",
+    "main.css": "/My_Portfolio/static/css/main.ae87e107.css",
+    "main.js": "/My_Portfolio/static/js/main.d1baaeab.js",
     "static/js/787.2dcca737.chunk.js": "/My_Portfolio/static/js/787.2dcca737.chunk.js",
     "static/media/system.svg": "/My_Portfolio/static/media/system.7e79c5a5a825a434d62653510eb1fa24.svg",
+    "static/media/frontendengineer.pdf": "/My_Portfolio/static/media/frontendengineer.aaaa1079856922c3788b.pdf",
     "static/media/techgirl.svg": "/My_Portfolio/static/media/techgirl.bf9acf664439ba97abec286789787c05.svg",
     "static/media/Cute Avatar.svg": "/My_Portfolio/static/media/Cute Avatar.7ea031c0cbbaad328326ca2a0961f30e.svg",
     "static/media/SunDim.svg": "/My_Portfolio/static/media/SunDim.727f2747b6f46f26efc8e45b910364d7.svg",
@@ -15,12 +16,12 @@
     "static/media/ArrowUp.svg": "/My_Portfolio/static/media/ArrowUp.f9314e9dda0dcdc5786b4488970e44d3.svg",
     "static/media/ArrowRight.svg": "/My_Portfolio/static/media/ArrowRight.eca6ac184f6e323526a777b0a3b85e80.svg",
     "index.html": "/My_Portfolio/index.html",
-    "main.5ca47a1b.css.map": "/My_Portfolio/static/css/main.5ca47a1b.css.map",
-    "main.dfd4761a.js.map": "/My_Portfolio/static/js/main.dfd4761a.js.map",
+    "main.ae87e107.css.map": "/My_Portfolio/static/css/main.ae87e107.css.map",
+    "main.d1baaeab.js.map": "/My_Portfolio/static/js/main.d1baaeab.js.map",
     "787.2dcca737.chunk.js.map": "/My_Portfolio/static/js/787.2dcca737.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ca47a1b.css",
-    "static/js/main.dfd4761a.js"
+    "static/css/main.ae87e107.css",
+    "static/js/main.d1baaeab.js"
   ]
 }
