@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/My_Portfolio/static/css/main.c4945c33.css",
-    "main.js": "/My_Portfolio/static/js/main.05d82905.js",
+    "main.css": "/My_Portfolio/static/css/main.6ea29296.css",
+    "main.js": "/My_Portfolio/static/js/main.2a06be76.js",
     "static/js/787.2dcca737.chunk.js": "/My_Portfolio/static/js/787.2dcca737.chunk.js",
     "static/media/system.svg": "/My_Portfolio/static/media/system.7e79c5a5a825a434d62653510eb1fa24.svg",
-    "static/media/frontendengineer.pdf": "/My_Portfolio/static/media/frontendengineer.aaaa1079856922c3788b.pdf",
+    "static/media/Nanji_Lakan_frontenddev_CV.pdf": "/My_Portfolio/static/media/Nanji_Lakan_frontenddev_CV.ab23e1d15b8c0e76715e.pdf",
     "static/media/techgirl.svg": "/My_Portfolio/static/media/techgirl.bf9acf664439ba97abec286789787c05.svg",
     "static/media/Cute Avatar.svg": "/My_Portfolio/static/media/Cute Avatar.7ea031c0cbbaad328326ca2a0961f30e.svg",
     "static/media/SunDim.svg": "/My_Portfolio/static/media/SunDim.727f2747b6f46f26efc8e45b910364d7.svg",
@@ -16,12 +16,12 @@
     "static/media/ArrowUp.svg": "/My_Portfolio/static/media/ArrowUp.f9314e9dda0dcdc5786b4488970e44d3.svg",
     "static/media/ArrowRight.svg": "/My_Portfolio/static/media/ArrowRight.eca6ac184f6e323526a777b0a3b85e80.svg",
     "index.html": "/My_Portfolio/index.html",
-    "main.c4945c33.css.map": "/My_Portfolio/static/css/main.c4945c33.css.map",
-    "main.05d82905.js.map": "/My_Portfolio/static/js/main.05d82905.js.map",
+    "main.6ea29296.css.map": "/My_Portfolio/static/css/main.6ea29296.css.map",
+    "main.2a06be76.js.map": "/My_Portfolio/static/js/main.2a06be76.js.map",
     "787.2dcca737.chunk.js.map": "/My_Portfolio/static/js/787.2dcca737.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4945c33.css",
-    "static/js/main.05d82905.js"
+    "static/css/main.6ea29296.css",
+    "static/js/main.2a06be76.js"
   ]
 }
