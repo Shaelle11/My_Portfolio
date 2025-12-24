@@ -4,9 +4,12 @@
   "private": false,
   "homepage": "https://shaelle11.github.io/My_Portfolio/",
   "dependencies": {
+    "@react-pdf/renderer": "^3.3.8",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "date-fns": "^3.4.0",
+    "firebase": "^12.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-pdf": "^7.7.1",

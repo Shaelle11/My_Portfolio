@@ -12,12 +12,28 @@
     --text-primary:#F5F6F6;
     --text-secondary: #CDD0D4;
     --max-width: 1440px;
-  }
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --primary-color-500:#8A42DB;
+    --primary-color-400:#9955E8;
+    --secondary-color:#2E8B57;
+    --ssecondary-color: #5A7A8A;
+    --surface-background: #FFFFFF;
+    --surface-primary: #F8F9FA;
+    --surface-secondary: #E9ECEF;
+    --surface-tertiary: #DEE2E6;
+    --text-primary:#000000;
+    --text-secondary: #2C3E50;
+    --max-width: 1440px;
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .Contacts{
    padding: 40px;
@@ -50,7 +66,7 @@ font-weight: 400;
 line-height: 16px; 
 }
 .Contact_Text h2{
-    color: var(--Color-Text-text-primary, #F5F6F6);
+    color: var(--text-primary);
 font-family: Heebo;
 font-size: 24px;
 font-style: normal;
@@ -59,7 +75,7 @@ line-height: 32px;
 }
 .Contact_Text p{
     max-width: 592px;
-color: var(--Color-Text-text-secondary, #CDD0D4);
+color: var(--text-secondary);
 font-family: Heebo;
 font-size: 16px;
 font-style: normal;
@@ -104,7 +120,7 @@ padding: 12px var(--Border-radius-border-radius-lg, 16px);
 align-items: center;
 border: none;
 border-radius: var(--Border-radius-border-radius-md, 8px);
-
+color: var(--text-primary);
 background: var(--surface-background);
 }
 form input:focus-within{
@@ -134,7 +150,7 @@ border-radius: var(--Border-radius-border-radius-md, 8px);
 background: var(--Color-Surface-surface-background, #171023);
     flex: 1 0 0;
 align-self: stretch;
-color: var(--Color-Text-text-secondary, #CDD0D4);
+color: var(--text-secondary);
 font-family: Heebo;
 font-size: 16px;
 font-style: normal;
@@ -163,4 +179,56 @@ line-height: 24px; /* 150% */
     justify-self: flex-start;
     padding: 16px;
     font-size: 16px;
+}
+
+/* Form Status Messages */
+.success-message {
+    background: var(--secondary-color);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.error-message {
+    background: #dc3545;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Input States */
+.Send_Message input:disabled,
+.Send_Message textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.Send_Message button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--surface-secondary);
+}
+
+/* Mobile responsiveness for form messages */
+@media screen and (max-width: 768px) {
+    .success-message,
+    .error-message {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
 }

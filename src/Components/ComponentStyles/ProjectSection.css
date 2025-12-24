@@ -12,12 +12,28 @@
     --text-primary:#F5F6F6;
     --text-secondary: #CDD0D4;
     --max-width: 1440px;
-  }
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --primary-color-500:#8A42DB;
+    --primary-color-400:#9955E8;
+    --secondary-color:#2E8B57;
+    --ssecondary-color: #5A7A8A;
+    --surface-background: #FFFFFF;
+    --surface-primary: #F8F9FA;
+    --surface-secondary: #E9ECEF;
+    --surface-tertiary: #DEE2E6;
+    --text-primary:#000000;
+    --text-secondary: #2C3E50;
+    --max-width: 1440px;
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .ProjectSection{
@@ -43,6 +59,7 @@ margin-top: 72px;
     width: 100%;
     text-align: center;
     gap: 8px;
+    margin-bottom: 40px;
 }
 .Project .text p{
     color: var(--secondary-color);
@@ -52,6 +69,18 @@ font-style: normal;
 font-weight: 400;
 line-height: 16px; 
 }
+
+.section__subtitle {
+    color: var(--text-secondary) !important;
+    font-family: Heebo !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
 .Project .text p:hover{
     transition: all 1s;
     color: var(--ssecondary-color);
@@ -79,33 +108,54 @@ gap: 32px;
      transform: translateY(-95%);
 
 }
-button{
+
+/* Fix Link underlines for Project Section button */
+a {
+    text-decoration: none !important;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none !important;
+}
+
+.see__all__btn{
     cursor: none;
     display: flex;
-min-width: 112px;
+min-width: 180px;
 padding: 16px 24px;
 justify-content: center;
 align-items: center;
 gap: 8px;
 border-radius: 8px;
-background-color: var(--surface-secondary);
+background-color: var(--primary-color-500);
 height: 56px;
 justify-self: center;
 border: none;
-margin-top: 40px;
-color: var(--Color-Text-text-primary, #F5F6F6);
+margin-top: 20px;
+color: var(--text-primary);
 text-align: center;
 font-family: Heebo;
 font-size: 16px;
 font-style: normal;
 font-weight: 500;
-line-height: 24px; 
+line-height: 24px;
+transition: all 0.3s ease;
+color: #FFFFFF !important;
 }
-button:hover{
-    transform: scale(1.1);
-    transition: ease 2s;
+
+.see__all__btn:hover{
+    background-color: var(--primary-color-400);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(138, 66, 219, 0.3);
 }
-button img:hover{
-    transform: scale(1.1);
-    transition: all ease-in-out 0.5s;
+
+.see__all__btn img{
+    transition: transform 0.3s ease;
+}
+
+.see__all__btn img:hover{
+    transform: translateX(4px);
 }

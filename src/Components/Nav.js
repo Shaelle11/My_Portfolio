@@ -1,19 +1,35 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './ComponentStyles/Nav.css';
 import Sidebar from '../Components/Sidebar'
 import MyLogo from '../images/mylogo.svg';
 import Lightmode from '../images/SunDim.svg';
 import Darkmode from '../images/darkmode.svg';
 import { Link } from "react-router-dom";
-
+import themeService from '../services/ThemeService';
 
 
 function Nav(props){
     const [isComponentVisible, setIsComponentVisible] = useState(false);
-    const [isMode, setIsMode] = useState(`${Lightmode}`)
-    function changeMode(){
-        setIsMode((ModeContainer) => 
-        ModeContainer === `${Lightmode}`? `${Darkmode}` : `${Lightmode}`)
+    const [isDarkMode, setIsDarkMode] = useState(themeService.isDarkMode());
+
+    // Initialize theme and set up listener
+    useEffect(() => {
+        // Set initial theme state
+        setIsDarkMode(themeService.isDarkMode());
+
+        // Listen for theme changes (useful if theme is changed from other components)
+        const observer = themeService.onThemeChange((newTheme) => {
+            setIsDarkMode(newTheme === 'dark');
+        });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+    function toggleTheme() {
+        const newTheme = themeService.toggleTheme();
+        setIsDarkMode(newTheme === 'dark');
     }
     const [isBurger, setIsBurger] = useState(props.Burger)
 function Clickme(){
@@ -35,7 +51,13 @@ setIsComponentVisible((isVisible) => !isVisible)
 
               <div>
 <div className="mode">
-<img onClick={changeMode} src={isMode} />
+<img 
+    onClick={toggleTheme} 
+    src={isDarkMode ? Lightmode : Darkmode} 
+    alt={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+    title={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+    className="theme-toggle"
+/>
 </div>
 <div>
    
@@ -43,7 +65,7 @@ setIsComponentVisible((isVisible) => !isVisible)
               </div>
             </ul>
          <div  className="Burger">
-         <img onClick={Clickme} id="burger" src={isBurger}/>
+         <img onClick={Clickme} id="burger" src={isBurger} alt="Menu toggle"/>
         {isComponentVisible && <Sidebar/>}
          </div>
         </nav>

@@ -12,12 +12,28 @@
     --text-primary:#F5F6F6;
     --text-secondary: #CDD0D4;
     --max-width: 1440px;
-  }
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --primary-color-500:#8A42DB;
+    --primary-color-400:#9955E8;
+    --secondary-color:#2E8B57;
+    --ssecondary-color: #5A7A8A;
+    --surface-background: #FFFFFF;
+    --surface-primary: #F8F9FA;
+    --surface-secondary: #E9ECEF;
+    --surface-tertiary: #DEE2E6;
+    --text-primary:#000000;
+    --text-secondary: #2C3E50;
+    --max-width: 1440px;
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .hero__section{
     position: relative;
@@ -92,6 +108,9 @@ animation: typing 4s steps(10) infinite;
         left: 100%;
         margin: 0 -35px 0 35px;
     }
+}
+Link div{
+    text-decoration: none;
 }
 .kid{
     width: 100%;
@@ -181,8 +200,17 @@ line-height: 24px;
     font-weight: 500;
     line-height: 24px; 
 }
-Link{
-    text-decoration: none;
+
+/* Fix Link underlines for Hero buttons */
+a {
+    text-decoration: none !important;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none !important;
 }
 .resume:before{
     content: '';
@@ -201,7 +229,7 @@ Link{
     content: '';
     display: block;
     position: absolute;
-    background-color: #7DFFAF;
+    background-color: var(--secondary-color);
     width: 30px;
     height: 100%;
     left: 30px;
@@ -236,7 +264,7 @@ background: var(--Color-Surface-button-primary-default, #8A42DB);
     content: '';
     display: block;
     position: absolute;
-    background-color: #7DFFAF;
+    background-color: var(--secondary-color);
     width: 60px;
     height: 100%;
     left: 0;
@@ -249,7 +277,7 @@ background: var(--Color-Surface-button-primary-default, #8A42DB);
     content: '';
     display: block;
     position: absolute;
-    background-color: #7DFFAF;
+    background-color: var(--secondary-color);
     width: 30px;
     height: 100%;
     left: 30px;
@@ -297,11 +325,19 @@ right: 30%;
        justify-content: center;
        width: 100%;
     }
+    .hero_text{
+        justify-content: center;
+        width: 100%;
+
+    }
+    .btn_container{
+        width: 100%;
+    }
 .next{
     width: 121.069px;
     height: 33.707px;
   top: 105%;
-  right: 50%;
+  right: 20%;
 }
 
 }

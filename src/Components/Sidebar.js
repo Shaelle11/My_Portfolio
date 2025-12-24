@@ -13,11 +13,11 @@ export default function Sidebar(){
     return(
         <div className="Sidebar">
  <ul className="List">
- <li><ActiveLink className='link' to="/" > Home</ActiveLink></li>
-                <li><ActiveLink className='link'  to="/projects"> Project</ActiveLink></li>
-                <li><ActiveLink className='link' to="/blog"> Blog</ActiveLink></li>
-                <li><ActiveLink className='link' to="/about" > About</ActiveLink></li>
-                <li><ActiveLink className='link' to='/contact' > Contact</ActiveLink></li>
+ <li><ActiveLink className='link' to="My_Portfolio/" > Home</ActiveLink></li>
+                <li><ActiveLink className='link'  to="My_Portfolio/projects"> Project</ActiveLink></li>
+                <li><ActiveLink className='link' to="My_Portfolio/blog"> Blog</ActiveLink></li>
+                <li><ActiveLink className='link' to="My_Portfolio/about" > About</ActiveLink></li>
+                <li><ActiveLink className='link' to='My_Portfolio/contact' > Contact</ActiveLink></li>
 <div className="line"></div>
              
              <div className=" mode side">

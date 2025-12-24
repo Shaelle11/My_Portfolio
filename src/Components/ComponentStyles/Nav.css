@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@600;800&family=Heebo:wght@400;500&family=Kalam&family=Outfit:wght@400;700&family=Poppins:wght@400;500;600&family=Volkhov:wght@400;700&family=Work+Sans&display=swap');
 
+/* Dark Theme (Default) */
 :root{
     --primary-color-500:#8A42DB;
     --primary-color-400:#9955E8;
@@ -12,7 +13,22 @@
     --text-primary:#F5F6F6;
     --text-secondary: #CDD0D4;
     --max-width: 1440px;
-  }
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --primary-color-500:#8A42DB;
+    --primary-color-400:#9955E8;
+    --secondary-color:#2E8B57;
+    --ssecondary-color: #5A7A8A;
+    --surface-background: #FFFFFF;
+    --surface-primary: #F8F9FA;
+    --surface-secondary: #E9ECEF;
+    --surface-tertiary: #DEE2E6;
+    --text-primary:#000000;
+    --text-secondary: #2C3E50;
+    --max-width: 1440px;
+}
 
 *{
     margin: 0;
@@ -85,11 +101,55 @@ nav .link{
     display: block;
 }
 
+/* Admin link styling - subtle and accessible only when needed */
+.admin-link {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    font-size: 16px;
+}
+
+.admin-link:hover {
+    opacity: 1;
+}
+
+/* Theme toggle styling */
+.mode {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.mode:hover {
+    background-color: var(--surface-secondary);
+}
+
+.theme-toggle {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--secondary-color));
+}
+
+/* Ensure smooth transitions for theme changes */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hide admin link on smaller screens for cleaner mobile experience */
 @media screen and (max-width:850px) {
     nav ul{
         display: none;
     }
     .Burger{
         display: block;
+    }
+    
+    .admin-link {
+        display: none;
     }
 }

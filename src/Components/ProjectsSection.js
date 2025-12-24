@@ -1,23 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Card from "./Card";
 import data from "./Projectdata"
 import "./ComponentStyles/ProjectSection.css"
 import ArrowRight from "../images/ArrowRight.svg"
+import ProjectService from "../services/ProjectService";
 
 export default function ProjectSection(){
-    const cards = data.map( card => {
+    const [allProjects, setAllProjects] = useState([]);
+    
+    useEffect(() => {
+        // Combine static projects with admin-created projects
+        const adminProjectsResult = ProjectService.getAllProjects();
+        const adminProjects = adminProjectsResult.success 
+            ? adminProjectsResult.data
+                .filter(project => project.featured) // Only show featured admin projects
+                .map(project => ({
+                    id: `admin-${project.id}`,
+                    title: project.title,
+                    description: project.description,
+                    img: project.image || '', // Use empty string if no image
+                    tag: project.technologies.reduce((acc, tech) => {
+                        acc[tech.toLowerCase()] = true;
+                        return acc;
+                    }, {}),
+                    githublink: project.repository,
+                    demolink: project.demo,
+                    isAdminProject: true
+                }))
+            : [];
+        
+        // Combine static and admin projects, prioritizing featured admin projects
+        const combinedProjects = [...adminProjects, ...data];
+        setAllProjects(combinedProjects);
+    }, []);
+    
+    // Get the latest 3 projects (mix of featured admin projects and static projects)
+    const latestProjects = allProjects.slice(0, 3);
+    
+    const cards = latestProjects.map( card => {
         return(
             <Card
             key = {card.id}
             {...card} />
         )
     })
+    
 return(
     <section className="ProjectSection">
         <div className="Project">
         <div className="text">
-<p>Projects</p>
-<h1>Take a look at my highlights Projects</h1>
+            <p>Projects</p>
+            <h1>Take a look at my latest Projects</h1>
+            <p className="section__subtitle">Here are some of my recent work showcasing modern web development practices and innovative solutions.</p>
         </div>
         <svg className="top_star" xmlns="http://www.w3.org/2000/svg" width="63" height="64" viewBox="0 0 63 64" fill="none">
   <g clip-path="url(#clip0_512_1696)">
@@ -39,21 +74,30 @@ return(
         <div className="Cards">
 {cards}
         </div>
-        <button>
-            See All
-            <img src={ArrowRight}/>
+        <Link to={"/My_Portfolio/projects"}>
+        <button className="see__all__btn">
+            See All Projects
+            <img src={ArrowRight} alt="Arrow right icon"/>
         </button>
+        </Link>
         <svg className="bottom_star" xmlns="http://www.w3.org/2000/svg" width="69" height="104" viewBox="0 0 69 104" fill="none">
   <g clip-path="url(#clip0_512_1705)">
-    <path d="M44.1525 13.8079C42.2615 20.5846 40.655 27.1911 37.2663 33.3677C35.523 36.5452 33.9818 39.7307 31.5095 42.4269C27.9847 46.2709 22.6702 50.6406 17.1578 50.87C16.3523 50.9036 14.625 50.6088 16.4368 50.6221C18.4026 50.6364 20.5578 50.8426 22.4794 51.2663C25.2675 51.8811 27.2129 54.4037 28.4596 56.8011C30.6889 61.0878 30.993 65.9536 30.9017 70.7217C30.8102 75.4915 29.8905 80.098 29.355 84.821C29.1618 86.5247 28.9448 88.2272 28.6713 89.9201C28.6499 90.0523 28.3239 91.9421 28.2068 91.5004C27.5532 89.0352 28.3445 85.7086 28.7318 83.2758C29.3514 79.3831 30.5621 75.6413 31.9769 71.9696C32.9639 69.4083 33.9839 66.6028 35.6867 64.4C37.7162 61.7744 40.9353 60.6147 44.0226 59.3104C44.0226 59.3104 52.0709 58.2905 51.2265 56.6288C49.2794 52.7976 41.1501 48.0382 40.4775 43.7276C39.7098 38.8068 40.7042 33.3819 41.8216 28.5904C43.0069 23.5085 44.0091 18.3567 45.7095 13.4241" stroke="#7DFFAF" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M34.9022 1.26392C33.534 4.89806 33.7824 8.45306 33.8756 12.4627C34.0174 17.7086 34.1256 22.9246 34.4198 28.1623" stroke="#7DFFAF" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M34.5088 37.6628C33.5076 42.8868 33.9578 47.9844 34.3748 53.2791C34.7709 58.3463 35.3267 63.3957 35.8734 68.4467" stroke="#7DFFAF" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3.86414 38.8984C6.93677 37.451 9.83342 37.3915 13.1404 37.1507C18.1437 36.7888 22.9638 36.1017 27.8808 35.0888" stroke="#7DFFAF" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M39.0099 33.4692C47.5059 32.8955 55.8682 31.4079 64.2932 30.1808" stroke="#7DFFAF" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M40.5946 29.0623L43.3177 23.8802" stroke="#7DFFAF" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M28.1265 41.4421L24.8199 44.8597" stroke="#7DFFAF" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M43.1036 40.0785L46.3909 42.3758" stroke="#7DFFAF" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M27.0373 26.2724C23.4755 25.1445 20.3061 23.4813 16.9229 21.8907" stroke="#7DFFAF" stroke-width="1.5" stroke-linecap="round"/>
   </g>
   <defs>
     <clipPath id="clip0_512_1705">
-      <rect width="45" height="95" fill="white" transform="translate(24.5879) rotate(15)"/>
+      <rect width="65.4762" height="70" fill="white"/>
     </clipPath>
   </defs>
 </svg>
-    </div>
+        </div>
     </section>
 )
 }

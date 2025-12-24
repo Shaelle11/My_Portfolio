@@ -12,36 +12,27 @@
     --text-primary:#F5F6F6;
     --text-secondary: #CDD0D4;
     --max-width: 1440px;
-}
-
-/* Light Theme */
-[data-theme="light"] {
-    --primary-color-500:#8A42DB;
-    --primary-color-400:#9955E8;
-    --secondary-color:#2E8B57;
-    --ssecondary-color: #5A7A8A;
-    --surface-background: #FFFFFF;
-    --surface-primary: #F8F9FA;
-    --surface-secondary: #E9ECEF;
-    --surface-tertiary: #DEE2E6;
-    --text-primary:#000000;
-    --text-secondary: #2C3E50;
-    --max-width: 1440px;
-}
+  }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.home{
-  display: flex;
-  flex-direction: column;
+.pdfview{
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
   justify-content: center;
-  background: var(--surface-background);
-  color: var(--text-primary);
-  min-height: 100vh;
+    gap: 2rem;
 }
 
+.pdfview .resume{
+    text-decoration: none;
+}
+
+
+.pdfview p{
+    color: var(--ssecondary-color);
+}

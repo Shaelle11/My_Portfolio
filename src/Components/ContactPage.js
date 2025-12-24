@@ -1,9 +1,109 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "../images/Cute Avatar.svg"
 import ArrrowRight from "../images/ArrowRight.svg"
 import "../Components/ComponentStyles/Contact.css"
+import ContactService from "../services/ContactService";
 
 export default function ContactPage(){
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const [formStatus, setFormStatus] = useState({
+        isSubmitting: false,
+        isSuccess: false,
+        error: null
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+        
+        // Clear any previous status when user types
+        if (formStatus.isSuccess || formStatus.error) {
+            setFormStatus({ isSubmitting: false, isSuccess: false, error: null });
+        }
+    };
+
+    const validateForm = () => {
+        if (!formData.name.trim()) {
+            return 'Please enter your name';
+        }
+        if (!formData.email.trim()) {
+            return 'Please enter your email';
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            return 'Please enter a valid email address';
+        }
+        if (!formData.message.trim()) {
+            return 'Please enter your message';
+        }
+        if (formData.message.trim().length < 10) {
+            return 'Message must be at least 10 characters long';
+        }
+        return null;
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        // Validate form
+        const validationError = validateForm();
+        if (validationError) {
+            setFormStatus({
+                isSubmitting: false,
+                isSuccess: false,
+                error: validationError
+            });
+            return;
+        }
+
+        setFormStatus({ isSubmitting: true, isSuccess: false, error: null });
+
+        try {
+            // Simulate API delay for better UX
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            const result = await ContactService.saveMessage({
+                name: formData.name.trim(),
+                email: formData.email.trim(),
+                message: formData.message.trim(),
+                source: 'Contact Section',
+                userAgent: navigator.userAgent,
+                referrer: document.referrer || 'Direct'
+            });
+
+            if (result && result.success) {
+                setFormStatus({
+                    isSubmitting: false,
+                    isSuccess: true,
+                    error: null
+                });
+                setFormData({ name: '', email: '', message: '' });
+                
+                // Auto-hide success message after 5 seconds
+                setTimeout(() => {
+                    setFormStatus({ isSubmitting: false, isSuccess: false, error: null });
+                }, 5000);
+            } else {
+                setFormStatus({
+                    isSubmitting: false,
+                    isSuccess: false,
+                    error: result.error || 'Failed to send message. Please try again.'
+                });
+            }
+        } catch (error) {
+            setFormStatus({
+                isSubmitting: false,
+                isSuccess: false,
+                error: 'An unexpected error occurred. Please try again.'
+            });
+        }
+    };
     return(
         <div className="Contacts">
             <div className="Contact__Section">
@@ -29,11 +129,53 @@ export default function ContactPage(){
 </div>
 </div>
 </div>
-<form className="Send_Message">
-<input placeholder="Name" type="text"/>
-<input placeholder="Email" type="email" />
-<textarea placeholder="Your message" typeof="text"/>
-<button type="submit" className="touch message">Send me a message <img src={ArrrowRight}/></button>
+<form className="Send_Message" onSubmit={handleSubmit}>
+    {formStatus.error && (
+        <div className="error-message">
+            {formStatus.error}
+        </div>
+    )}
+    {formStatus.isSuccess && (
+        <div className="success-message">
+            Thank you! Your message has been sent successfully. I'll get back to you soon!
+        </div>
+    )}
+    
+    <input 
+        placeholder="Name" 
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        disabled={formStatus.isSubmitting}
+        required
+    />
+    <input 
+        placeholder="Email" 
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        disabled={formStatus.isSubmitting}
+        required
+    />
+    <textarea 
+        placeholder="Your message"
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        disabled={formStatus.isSubmitting}
+        required
+        minLength="10"
+    />
+    <button 
+        type="submit" 
+        className="see__all__btn"
+        disabled={formStatus.isSubmitting}
+    >
+        {formStatus.isSubmitting ? 'Sending...' : 'Send me a message'}
+        {!formStatus.isSubmitting && <img src={ArrrowRight} alt="Arrow"/>}
+    </button>
 </form>
             </div>
 

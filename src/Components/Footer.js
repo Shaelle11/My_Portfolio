@@ -6,7 +6,7 @@ export default function Footer(){
     return(
         <div className="footer">
             <div className="footer_name">
-                Nanji Lakan, 2024. 
+                Nanji Lakan, 2026. 
             </div>
             <div className="footer_links">
                 <a href="https://github.com/Shaelle11" target="blank" rel="noopener noreferrer">

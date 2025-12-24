@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@600;800&family=Heebo:wght@400;500&family=Kalam&family=Outfit:wght@400;700&family=Poppins:wght@400;500;600&family=Volkhov:wght@400;700&family=Work+Sans&display=swap');
 
+/* Dark Theme (Default) */
 :root{
   --primary-color-500:#8A42DB;
   --primary-color-400:#9955E8;
@@ -13,16 +14,33 @@
   --text-secondary: #CDD0D4;
 }
 
+/* Light Theme */
+[data-theme="light"] {
+  --primary-color-500:#8A42DB;
+  --primary-color-400:#9955E8;
+  --secondary-color:#2E8B57;
+  --ssecondary-color: #5A7A8A;
+  --surface-background: #FFFFFF;
+  --surface-primary: #F8F9FA;
+  --surface-secondary: #E9ECEF;
+  --surface-tertiary: #DEE2E6;
+  --text-primary:#000000;
+  --text-secondary: #2C3E50;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
 .App {
 background-color: var(--surface-background);
 cursor: none;
 max-height: 100vh ;
 overflow: scroll;
+transition: background-color 0.3s ease;
 }
 
 /* Define the scrollbar style */
