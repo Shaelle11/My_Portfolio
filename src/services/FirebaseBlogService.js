@@ -248,5 +248,6 @@ class FirebaseBlogService {
 }
 
 // Create and export instance
-export const FirebaseBlogService = new FirebaseBlogService();
-export default FirebaseBlogService;
+const firebaseBlogService = new FirebaseBlogService();
+export { firebaseBlogService };
+export default firebaseBlogService;

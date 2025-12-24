@@ -109,7 +109,7 @@ export default function ContactPage(){
             <div className="Contact__Section">
 <div className="Contact_section">
 <div>
-<img className="Avatar" src={Avatar}/>
+<img className="Avatar" src={Avatar} alt="Contact Avatar"/>
 </div>
 <div className="Contact_Text">
 <h1>Contact</h1>

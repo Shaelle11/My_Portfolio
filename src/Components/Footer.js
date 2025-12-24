@@ -18,7 +18,7 @@ export default function Footer(){
                 <a href="https://www.instagram.com/the_shaelle/" >
                instagram  
                 </a>
-                <a href="#nav"><img src={ArrowUp}/></a>
+                <a href="#nav"><img src={ArrowUp} alt="Back to top"/></a>
             </div>
         </div>
     )

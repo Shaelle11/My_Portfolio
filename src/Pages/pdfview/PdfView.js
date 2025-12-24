@@ -1,18 +1,9 @@
 import React from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
-import { useState } from 'react';
 import Resume from "../../images/Nanji_Lakan_frontenddev_CV.pdf";
 import "./pdfview.css";
 
 
 export default function PdfView() {
-  const [numPages, setNumPages] = useState(4);
-  const [pageNumber, setPageNumber] = useState(1);
- 
-  
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
   return (
     <div className='pdfview'>
       {/* <Document file={Resume}>

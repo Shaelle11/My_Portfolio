@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import BlogService from "../../services/BlogService";
 import AnalyticsService from "../../services/AnalyticsService";
@@ -12,13 +12,7 @@ export default function BlogPost() {
     const [error, setError] = useState(null);
     const [relatedPosts, setRelatedPosts] = useState([]);
 
-    useEffect(() => {
-        if (id) {
-            loadBlogPost();
-        }
-    }, [id]);
-
-    const loadBlogPost = async () => {
+    const loadBlogPost = useCallback(async () => {
         try {
             setLoading(true);
             setError(null);
@@ -61,7 +55,13 @@ export default function BlogPost() {
         } finally {
             setLoading(false);
         }
-    };
+    }, [id, navigate]);
+
+    useEffect(() => {
+        if (id) {
+            loadBlogPost();
+        }
+    }, [id, loadBlogPost]);
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);

@@ -21,7 +21,7 @@ export default function Sidebar(){
 <div className="line"></div>
              
              <div className=" mode side">
-             <img onClick={changeMode} src={isMode} />  
+             <img onClick={changeMode} src={isMode} alt="Toggle theme" />  
               </div>
              
             </ul>
