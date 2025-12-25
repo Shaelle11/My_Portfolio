@@ -813,137 +813,229 @@ export default function Admin() {
             {activeTab === 'blogs' && (
                 <div className="admin-section">
                     <div className="section-header">
-                        <h2>Blog Management</h2>
+                        <div className="header-content">
+                            <h2>Blog Management</h2>
+                            <p>Create and manage your blog posts</p>
+                        </div>
                         <button 
-                            className="primary-btn"
+                            className="create-post-btn"
                             onClick={() => setShowBlogForm(true)}
                         >
-                            Create New Post
+                            <span className="btn-icon">✨</span>
+                            <span>Create New Post</span>
                         </button>
                     </div>
 
                     {showBlogForm && (
-                        <div className="modal-overlay">
-                            <div className="modal-content blog-form">
-                                <div className="modal-header">
-                                    <h3>{editingBlog ? 'Edit Blog Post' : 'Create New Blog Post'}</h3>
+                        <div className="blog-form-overlay">
+                            <div className="blog-form-container">
+                                <div className="blog-form-header">
+                                    <div className="header-content">
+                                        <h2>{editingBlog ? 'Edit Blog Post' : 'Create New Blog Post'}</h2>
+                                        <p>Share your thoughts and expertise with the world</p>
+                                    </div>
                                     <button 
-                                        className="close-btn"
+                                        className="form-close-btn"
                                         onClick={handleCancelBlogEdit}
+                                        title="Close"
                                     >
-                                        ×
+                                        ✕
                                     </button>
                                 </div>
                                 
-                                <form onSubmit={handleCreateBlog}>
-                                    <div className="form-row">
-                                        <div className="form-group">
-                                            <label>Title *</label>
-                                            <input
-                                                type="text"
-                                                value={newBlog.title}
-                                                onChange={(e) => setNewBlog({...newBlog, title: e.target.value})}
-                                                required
-                                                placeholder="Enter blog title"
-                                            />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Category</label>
-                                            <select
-                                                value={newBlog.category}
-                                                onChange={(e) => setNewBlog({...newBlog, category: e.target.value})}
-                                            >
-                                                <option value="Development">Development</option>
-                                                <option value="Design">Design</option>
-                                                <option value="Tutorial">Tutorial</option>
-                                                <option value="Technology">Technology</option>
-                                                <option value="Personal">Personal</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label>Summary *</label>
-                                        <textarea
-                                            value={newBlog.summary}
-                                            onChange={(e) => setNewBlog({...newBlog, summary: e.target.value})}
-                                            required
-                                            placeholder="Brief summary of the blog post"
-                                            rows="3"
-                                        />
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label>Content *</label>
-                                        <textarea
-                                            value={newBlog.content}
-                                            onChange={(e) => setNewBlog({...newBlog, content: e.target.value})}
-                                            required
-                                            placeholder="Write your blog content here..."
-                                            rows="10"
-                                        />
-                                    </div>
-
-                                    <div className="form-row">
-                                        <div className="form-group">
-                                            <label>Tags</label>
-                                            <input
-                                                type="text"
-                                                value={newBlog.tags}
-                                                onChange={(e) => setNewBlog({...newBlog, tags: e.target.value})}
-                                                placeholder="React, JavaScript, Web Development (comma-separated)"
-                                            />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Image URL</label>
-                                            <input
-                                                type="url"
-                                                value={newBlog.image}
-                                                onChange={(e) => setNewBlog({...newBlog, image: e.target.value})}
-                                                placeholder="https://example.com/image.jpg"
-                                            />
+                                <form onSubmit={handleCreateBlog} className="blog-form">
+                                    {/* Basic Information Section */}
+                                    <div className="form-section">
+                                        <h3 className="section-title">📝 Basic Information</h3>
+                                        <div className="section-content">
+                                            <div className="input-group">
+                                                <label className="input-label">
+                                                    Post Title <span className="required">*</span>
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    className="form-input title-input"
+                                                    value={newBlog.title}
+                                                    onChange={(e) => setNewBlog({...newBlog, title: e.target.value})}
+                                                    required
+                                                    placeholder="Enter an engaging title for your blog post..."
+                                                />
+                                            </div>
+                                            
+                                            <div className="input-row">
+                                                <div className="input-group">
+                                                    <label className="input-label">Category</label>
+                                                    <select
+                                                        className="form-select"
+                                                        value={newBlog.category}
+                                                        onChange={(e) => setNewBlog({...newBlog, category: e.target.value})}
+                                                    >
+                                                        <option value="Development">💻 Development</option>
+                                                        <option value="Design">🎨 Design</option>
+                                                        <option value="Tutorial">📚 Tutorial</option>
+                                                        <option value="Technology">🚀 Technology</option>
+                                                        <option value="Personal">👤 Personal</option>
+                                                    </select>
+                                                </div>
+                                                <div className="input-group">
+                                                    <label className="input-label">Author</label>
+                                                    <input
+                                                        type="text"
+                                                        className="form-input"
+                                                        value={newBlog.author}
+                                                        onChange={(e) => setNewBlog({...newBlog, author: e.target.value})}
+                                                        placeholder="Author name"
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="form-row">
-                                        <div className="form-group">
-                                            <label>Author</label>
-                                            <input
-                                                type="text"
-                                                value={newBlog.author}
-                                                onChange={(e) => setNewBlog({...newBlog, author: e.target.value})}
-                                                placeholder="Author name"
-                                            />
+                                    {/* Content Section */}
+                                    <div className="form-section">
+                                        <h3 className="section-title">✍️ Content</h3>
+                                        <div className="section-content">
+                                            <div className="input-group">
+                                                <label className="input-label">
+                                                    Summary <span className="required">*</span>
+                                                    <span className="helper-text">Brief description shown in blog previews</span>
+                                                </label>
+                                                <textarea
+                                                    className="form-textarea summary-textarea"
+                                                    value={newBlog.summary}
+                                                    onChange={(e) => setNewBlog({...newBlog, summary: e.target.value})}
+                                                    required
+                                                    placeholder="Write a compelling summary that makes readers want to read more..."
+                                                    rows="3"
+                                                    maxLength="200"
+                                                />
+                                                <div className="char-count">{newBlog.summary.length}/200</div>
+                                            </div>
+
+                                            <div className="input-group">
+                                                <label className="input-label">
+                                                    Article Content <span className="required">*</span>
+                                                    <span className="helper-text">Write your main content here. You can use markdown formatting.</span>
+                                                </label>
+                                                <textarea
+                                                    className="form-textarea content-textarea"
+                                                    value={newBlog.content}
+                                                    onChange={(e) => setNewBlog({...newBlog, content: e.target.value})}
+                                                    required
+                                                    placeholder="Start writing your blog post content here...\n\nYou can use markdown formatting like:\n- **Bold text**\n- *Italic text*\n- # Headers\n- Lists\n- Code blocks\n\nTip: Write in a conversational tone to engage your readers!"
+                                                    rows="12"
+                                                />
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="checkbox-group">
-                                        <label className="checkbox-label">
-                                            <input
-                                                type="checkbox"
-                                                checked={newBlog.published}
-                                                onChange={(e) => setNewBlog({...newBlog, published: e.target.checked})}
-                                            />
-                                            <span className="checkmark"></span>
-                                            Publish immediately
-                                        </label>
-                                        <label className="checkbox-label">
-                                            <input
-                                                type="checkbox"
-                                                checked={newBlog.featured}
-                                                onChange={(e) => setNewBlog({...newBlog, featured: e.target.checked})}
-                                            />
-                                            <span className="checkmark"></span>
-                                            Feature this post
-                                        </label>
+                                    {/* Media & Tags Section */}
+                                    <div className="form-section">
+                                        <h3 className="section-title">🏷️ Tags & Media</h3>
+                                        <div className="section-content">
+                                            <div className="input-group">
+                                                <label className="input-label">
+                                                    Tags
+                                                    <span className="helper-text">Comma-separated tags to help readers find your content</span>
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    className="form-input"
+                                                    value={newBlog.tags}
+                                                    onChange={(e) => setNewBlog({...newBlog, tags: e.target.value})}
+                                                    placeholder="React, JavaScript, Web Development, Tutorial"
+                                                />
+                                                {newBlog.tags && (
+                                                    <div className="tag-preview">
+                                                        {newBlog.tags.split(',').map((tag, index) => 
+                                                            tag.trim() && <span key={index} className="preview-tag">{tag.trim()}</span>
+                                                        )}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            
+                                            <div className="input-group">
+                                                <label className="input-label">
+                                                    Featured Image URL
+                                                    <span className="helper-text">Optional: Add a cover image for your blog post</span>
+                                                </label>
+                                                <input
+                                                    type="url"
+                                                    className="form-input"
+                                                    value={newBlog.image}
+                                                    onChange={(e) => setNewBlog({...newBlog, image: e.target.value})}
+                                                    placeholder="https://example.com/your-image.jpg"
+                                                />
+                                                {newBlog.image && (
+                                                    <div className="image-preview">
+                                                        <img src={newBlog.image} alt="Preview" onError={(e) => e.target.style.display = 'none'} />
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
                                     </div>
 
+                                    {/* Publishing Options */}
+                                    <div className="form-section">
+                                        <h3 className="section-title">🚀 Publishing Options</h3>
+                                        <div className="section-content">
+                                            <div className="publishing-options">
+                                                <div className="option-card">
+                                                    <label className="option-label">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={newBlog.published}
+                                                            onChange={(e) => setNewBlog({...newBlog, published: e.target.checked})}
+                                                            className="option-checkbox"
+                                                        />
+                                                        <div className="option-content">
+                                                            <div className="option-icon">📢</div>
+                                                            <div className="option-text">
+                                                                <h4>Publish Immediately</h4>
+                                                                <p>Make this post visible to readers right away</p>
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                
+                                                <div className="option-card">
+                                                    <label className="option-label">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={newBlog.featured}
+                                                            onChange={(e) => setNewBlog({...newBlog, featured: e.target.checked})}
+                                                            className="option-checkbox"
+                                                        />
+                                                        <div className="option-content">
+                                                            <div className="option-icon">⭐</div>
+                                                            <div className="option-text">
+                                                                <h4>Feature This Post</h4>
+                                                                <p>Highlight this post on your homepage</p>
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Form Actions */}
                                     <div className="form-actions">
-                                        <button type="button" onClick={handleCancelBlogEdit} className="secondary-btn">
+                                        <button type="button" onClick={handleCancelBlogEdit} className="cancel-btn">
                                             Cancel
                                         </button>
-                                        <button type="submit" className="primary-btn">
-                                            {editingBlog ? 'Update Post' : 'Create Post'}
+                                        <button type="submit" className="submit-btn">
+                                            {editingBlog ? (
+                                                <>
+                                                    <span>💾</span>
+                                                    Update Post
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <span>✨</span>
+                                                    Create Post
+                                                </>
+                                            )}
                                         </button>
                                     </div>
                                 </form>
