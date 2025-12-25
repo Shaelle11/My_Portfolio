@@ -391,9 +391,6 @@ export default function Admin() {
                         />
                         <button type="submit">Login</button>
                     </form>
-                    {/* <p style={{marginTop: '20px', fontSize: '12px', color: '#888'}}>
-                        Demo password: admin123
-                    </p> */}
                 </div>
             </div>
         );
